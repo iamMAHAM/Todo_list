@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>todo_list</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/3d7d1bcca5.js" crossorigin="anonymous"></script>
 	<script src="script.js"></script>
 </head>
 <body>
@@ -14,13 +15,68 @@
 			<h1>
 				TODO LIST
 			</h1>
+			<div id="tasks_field_and_button">
 				<input type="text" placeholder="Entrez une tâche">&nbsp;&nbsp;
 				<button id="add_button">Add</button>
+			</div>
 		</div>
-		<div id="taches">
-			<p id="tasks_amount">
-				Vous avez 0 tache(s) à faire
+		<div class="tasks">
+			<div class="under_tasks">
+				<p class="text">
+					Task 1
+				</p>
+				<button class="icones">
+					<p>
+						<i class="fa-solid fa-trash"></i>
+					</p>
+				</button>
+			</div>
+			<div class="under_tasks">
+				<p class="text">
+					Task 2
+				</p>
+				<button class="icones">
+					<p>
+						<i class="fa-solid fa-trash"></i>
+					</p>
+				</button>
+			</div>
+			<div class="under_tasks">
+				<p class="text">
+					Task 3
+				</p>
+				<button class="icones">
+					<p>
+						<i class="fa-solid fa-trash"></i>
+					</p>
+				</button>
+			</div>
+			<div class="under_tasks">
+				<p class="text">
+					Task 4
+				</p>
+				<button class="icones">
+					<p>
+						<i class="fa-solid fa-trash"></i>
+					</p>
+				</button>
+			</div>
+			<div class="under_tasks">
+				<p class="text">
+					Task 5
+				</p>
+				<button class="icones">
+					<p>
+						<i class="fa-solid fa-trash"></i>
+					</p>
+				</button>
+			</div>
+		</div>
+		<div id="bottom">
+			<p id="tasks_para">
+				Nombres de tache(s) à faire : 
 			</p>
+			<p id="tasks_amount">5</p>
 			<button id="remove_all">Remove All</button>
 		</div>
 	</div>
