@@ -43,6 +43,7 @@ h1 {
 }
 
 input {
+	font-size: 20px;
 	width: 75%;
 	height: 30px;
 	color: red;
