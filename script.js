@@ -12,16 +12,7 @@ var add_tasks = function() {
 	text_p.setAttribute("class", "text")
 	button.setAttribute("class", "icones")
 	i.setAttribute("class", "fa-solid fa-trash")
-
-	div.style.marginLeft = "0px"
-	div.style.justifyContent = "space-around"
-	div.style.display = "flex"
-	text_p.style.fontSize = "20px"
-	text_p.style.margin = "5px"
-	text_p.style.width = "85%"
-	text_p.style.color = "red"
-	text_p.style.backgroundColor = "white"
-
+	
 	let text = document.createTextNode(value)
 
 	text_p.appendChild(text)
