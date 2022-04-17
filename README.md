@@ -1,2 +1,3 @@
 # Todo_list
-This is a repository for Fist Nan project
+
+Todolist is a simple website where will be managed my timetable
