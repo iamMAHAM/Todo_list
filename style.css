@@ -10,11 +10,11 @@ h1 {
 	border-style: groove;
 	padding: 0;
 	font-size: 50px;
-	color: red;
+	color: white;
 }
 
 #parent {
-	background-color: aquamarine;
+	background-color: #A4EB8B;
 	width: 700px;
 	height: 900px;
 	border: solid 5px white;
@@ -28,7 +28,7 @@ h1 {
 
 #bottom {
 	width: 100%;
-	color: red;
+	color: white;
 	font-family: Arial, Helvetica, sans-serif;
 	position: absolute;
 	display: flex;
@@ -50,10 +50,13 @@ h1 {
 }
 input {
 	font-size: 20px;
-	width: 75%;
+	width: 85%;
+	margin-left: 4px;
 	height: 30px;
-	color: red;
+	color: #A4EB8B;
+	text-align: center;
 }
+
 #add_button {
 	width: 80px;
 	color: white;
@@ -77,24 +80,29 @@ input {
 }
 
 body #parent .tasks .under_tasks .text{
+	text-align: center;
 	font-size: 20px;
 	margin: 5px;
 	width: 85%;
-	color: red;
-	background-color: white;
+	color: #A4EB8B;
 }
 
-body #parent .tasks .under_tasks .icones{
+#parent .tasks .under_tasks .icones{
 	color: red;
 	background: transparent;
 	border: 0px;
 	width: 10%;
+	font-size: 15px;
 }
 .under_tasks {
 	display: flex;
 	justify-content: space-around;
 	margin-top: 5px;
 	margin-left: 0px;
+	background-color: white;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 /*
@@ -102,3 +110,31 @@ other way to access class with two name
  .fa-solid\ fa-tras {
 	color: red;
 } */
+
+#add_button:hover{
+	color: rgb(106, 213, 23);
+	cursor: pointer;
+	background-color: white;
+
+}
+
+#remove_all:hover{
+	color: red;
+	cursor: pointer;
+	background-color: white;
+
+}
+
+#parent .tasks .under_tasks .icones:hover{
+	cursor: pointer;
+	color: #A4EB8B;
+	
+}
+
+.bover {
+	border-radius: 10px;
+}
+
+input::placeholder {
+	color: #A4EB8B;
+}
