@@ -55,11 +55,26 @@ var remove_tasks = function (){
 
 }
 
+var remove_task = function (){
+	let icones  = document.querySelectorAll("#icon_button")
+	// console.log(tasks_div)
+	// console.log(icone)
+	for (let i = 0; i < icones.length; i++)
+	{
+		this.parentElement.remove()
+	}
+	
+
+
+	 
+}
 
 // select button add ans remove_all
 let add_button = document.querySelector("#add_button")
 let remove_All_button = document.querySelector("#remove_all")
+let delete_button = document.querySelector("#icon_button")
 
 // events listener
 add_button.addEventListener("click", add_task)
+delete_button.addEventListener("click", remove_task)
 remove_All_button.addEventListener("click", remove_tasks)
