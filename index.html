@@ -7,7 +7,7 @@
 	<title>todo_list</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://kit.fontawesome.com/3d7d1bcca5.js" crossorigin="anonymous"></script>
-	<script src="script.js"></script>
+	
 </head>
 <body>
 	<div id="parent">
@@ -16,11 +16,21 @@
 				TODO LIST
 			</h1>
 			<div id="tasks_field_and_button">
-				<input type="text" placeholder="Entrez une tâche">
+				<input type="text" id="input" placeholder="Entrez une tâche">
 				<button id="add_button" class="bover">Add</button>
 			</div>
 		</div>
 		<div class="tasks">
+			<div class="under_tasks">
+				<p class="text">
+					Task 1
+				</p>
+				<button id="icon_button" class="icones">
+					<p>
+						<i class="fa-solid fa-trash"></i>
+					</p>
+				</button>
+			</div>
 		</div>
 		<div id="bottom">
 			<p id="tasks_para">
@@ -30,6 +40,7 @@
 			<button id="remove_all" class="bover">Remove All</button>
 		</div>
 	</div>
+	<script src="script.js"></script>
 
 </body>
 </html>
