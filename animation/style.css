@@ -1,0 +1,75 @@
+
+			/* CSS ANIMATION BUTTON */
+/* button {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 50px;
+	width: 200px;
+	overflow: hidden;
+	border-radius: .2rem;
+	transform: translate(-50%);
+}
+
+span {
+	font-size: 1.2rem;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: green;
+	width: 100%;
+	height: 100%;
+	transition: transform 3s;
+}
+
+button:hover span{
+	transform: translateY(-100%);
+	margin: 0px;
+	padding: 0px;
+}
+
+button:hover :nth-child(2){
+	background-color: red;
+} */
+
+			/* CSS ANIMATION DIV 2 */
+
+/* 
+div {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	animation: anim1 5s 0s infinite ease;
+}
+
+@keyframes anim1 {
+	25% {
+		transform: translateX(200%) rotate(1800deg);
+		border-radius: 1rem;
+		background-color: aqua;
+	}
+
+	50% {
+		transform: translate(200%, 200%);
+		border-radius: 2rem;
+		background-color: blueviolet;
+		
+	}
+
+	75% {
+		transform: translateY(200%) rotate(1800deg);
+		border-radius: 3rem;
+		background-color: black;
+	}
+	100% {
+		transform: translateY(0%);
+
+	}
+} */
