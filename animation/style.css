@@ -73,3 +73,75 @@ div {
 
 	}
 } */
+
+
+		/* CSS NAN DIGITAL ACADEMY */
+
+
+
+span:nth-child(1) {
+	color: violet;
+	font-size: 3.3rem;
+	z-index: 1;
+}
+
+span:nth-child(2) {
+	z-index: 0;
+	left: -100%;
+	animation: anim-2 11s 0s infinite ease-in-out;
+}
+
+p {
+	margin-top: 30%;
+	overflow: hidden;
+	font-size: 3rem;
+	font-weight: bolder;
+	animation: anim-p 13s 0s infinite ease-in-out;
+}
+
+div {
+	transform: translate(-50%);
+	position: relative;
+	left: 30%;
+	padding: 0;
+	border-bottom: 5px solid black;
+	overflow: hidden;
+	width: 500px;
+	height: 60px;
+}
+
+span {
+	position: absolute;
+	background-color: white;
+}
+
+@keyframes anim-p {
+	0% {
+	  margin-top: 30%;
+	}
+	5%{
+	  margin-top: 3%;
+	}
+	50% {
+		margin-top: 3%;
+	}
+	75% {
+	   margin-top: 30%;
+	}
+}
+
+@keyframes anim-2 {
+	0% {
+		left: -100%;
+	}
+	20% {
+		left: 7.5%;
+	}
+
+	50% {
+		left: 7.5%;
+	}
+	75% {
+		left: -100%;
+	}
+}
