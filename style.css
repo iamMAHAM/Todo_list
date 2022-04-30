@@ -16,7 +16,7 @@ h1 {
 #parent {
 	background-color: #A4EB8B;
 	width: 700px;
-	height: 900px;
+	min-height: 900px;
 	border: solid 5px white;
 	position :absolute;
 	top: 10%;
