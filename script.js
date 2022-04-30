@@ -1,11 +1,11 @@
 // function to add task
 var add_task = function(){
-	// select parent div
+	// target
 	let tasks_div = document.querySelector(".tasks")
 	let tasks_amount = document.querySelector("#tasks_amount")
 	let input  = document.querySelector("#input")
 
-	// get values from field and index
+	// get values from field and incremente index
 	let amount_text = tasks_amount.textContent
 	let index = Number(amount_text)+1
 
@@ -14,7 +14,7 @@ var add_task = function(){
 	let tasks = 
 	`
 		<div class="under_tasks">
-			<input type="checkbox" class="checkbox"/>
+			<input type="checkbox" class="checkbox" onclick="ended_task(event)"/>
 			<p class="text">
 				${value}
 			</p>
@@ -60,9 +60,28 @@ function remove_task(e){
 	let index = Number(amount_text)-1
 
 
-	console.log(e.target)
 	tasks_div.removeChild(e.target.parentElement.parentElement)
 	tasks_amount.innerHTML = tasks_amount.innerHTML.replace(amount_text, index)
+}
+
+function ended_task(e){
+	document.querySelector(".tasks")
+
+	let parent = e.target.parentElement
+	parent.style.backgroundColor = "grey"
+
+	let p = document.querySelector(`.${parent.className} p`)
+	p.style.textDecoration = "line-through"
+
+	let i = document.querySelector(`.${parent.className} button`)
+	i.style.visibility = "hidden"
+
+	if (!e.target.checked)
+	{
+		parent.style.backgroundColor = "white"
+		p.style.textDecoration = "none"
+		i.style.visibility = "visible"
+	}
 }
 
 // select button add ans remove_all
