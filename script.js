@@ -1,13 +1,14 @@
 let tasks_div = document.querySelector(".tasks")
 let tasks_amount = document.querySelector("#tasks_amount")
 let task_input = document.querySelector("#input")
+let add_button = document.querySelector("#add_button")
+let remove_All_button = document.querySelector("#remove_all")
+add_button.disabled = true
 
 function add_task() {
-	// get values from field and index
 	tasks_div.innerHTML += newTask(task_input.value)
 	tasks_amount.textContent = Number(tasks_amount.textContent) + 1
 }
-// function to remove all tasks
 
 function remove_tasks() {
 	tasks_div.textContent = ""
@@ -26,7 +27,7 @@ function newTask(task_text) {
 	return (
 		`
 	<div class="under_tasks">
-		<input type="checkbox" class="checkbox"/>
+		<input onclick="ended_task(event)" type="checkbox" class="checkbox"/>
 		<p class="text">
 			${task_text}
 		</p>
@@ -47,29 +48,21 @@ function handle() {
 }
 
 function ended_task(e){
-	document.querySelector(".tasks")
-
 	let parent = e.target.parentElement
+	let next = e.target.nextElementSibling
+	let i = next.nextElementSibling
+
 	parent.style.backgroundColor = "grey"
-
-	let p = document.querySelector(`.${parent.className} p`)
-	p.style.textDecoration = "line-through"
-
-	let i = document.querySelector(`.${parent.className} button`)
+	next.style.textDecoration = "line-through"
 	i.style.visibility = "hidden"
 
 	if (!e.target.checked)
 	{
 		parent.style.backgroundColor = "white"
-		p.style.textDecoration = "none"
+		next.style.textDecoration = "none"
 		i.style.visibility = "visible"
 	}
 }
-
-// select button add ans remove_all
-let add_button = document.querySelector("#add_button")
-let remove_All_button = document.querySelector("#remove_all")
-add_button.disabled = true
 
 // events listener
 add_button.addEventListener("click", add_task)
