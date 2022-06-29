@@ -100,9 +100,7 @@ function changeState(text, state){
 	todo_list = JSON.parse(localStorage.getItem("todo_list"))
 	let index = todo_list.tasks.indexOf(text.trim())
 	let value = state === "active" ? "active" : "inactive"
-	console.log("at index", index, "text", text.trim())
 	todo_list.state[index] = value
-	console.log(todo_list)
 	localStorage.setItem("todo_list", JSON.stringify(todo_list))
 }
 
