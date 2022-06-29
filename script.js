@@ -33,11 +33,11 @@ function remove_task(e) {
 	tasks_amount.textContent = Number(tasks_amount.textContent) - 1
 }
 
-function newTask(task_text, className) {
+function newTask(task_text, className, checked="") {
 	return (
 		`
 	<div class="under_tasks ${className}">
-		<input onclick="ended_task(event)" type="checkbox" class="checkbox"/>
+		<input onclick="ended_task(event)" type="checkbox" class="checkbox" ${checked}/>
 		<p class="text">
 			${task_text}
 		</p>
@@ -107,12 +107,15 @@ function changeState(text, state){
 }
 
 function restoreTask(){
+	let c = null
 	todo_list = JSON.parse(localStorage.getItem("todo_list"))
 	if (todo_list){
 		for (let i = 0; i < todo_list.tasks.length; i++){
-			tasks_div.innerHTML += newTask(todo_list.tasks[i], todo_list.state[i])
+			c = todo_list.state[i] === "inactive" ? "checked" : ""
+			tasks_div.innerHTML += newTask(todo_list.tasks[i], todo_list.state[i], c)
 		}
 	}
+	tasks_amount.textContent = todo_list.tasks.length
 }
 
 // events listener
