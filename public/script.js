@@ -15,7 +15,8 @@ function add_task() {
 	add_button.disabled = true
 }
 
-function remove_tasks() {
+function remove_tasks(e) {
+	e.preventDefault()
 	tasks_div.textContent = ""
 	tasks_amount.textContent = 0
 	todo_list = JSON.parse(localStorage.getItem("todo_list"))
@@ -112,8 +113,8 @@ function restoreTask(){
 			c = todo_list.state[i] === "inactive" ? "checked" : ""
 			tasks_div.innerHTML += newTask(todo_list.tasks[i], todo_list.state[i], c)
 		}
+		tasks_amount.textContent = todo_list.tasks.length
 	}
-	tasks_amount.textContent = todo_list.tasks.length
 }
 
 // events listener

@@ -1,0 +1,24 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "a simple todo_list to manage a timetable",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamMAHAM/Todo_list.git"
+  },
+  "author": "@iamMAHAM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamMAHAM/Todo_list/issues"
+  },
+  "homepage": "https://github.com/iamMAHAM/Todo_list#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
