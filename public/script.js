@@ -6,6 +6,19 @@ let remove_All_button = document.querySelector("#remove_all")
 let todo_list = null
 add_button.disabled = true
 
+
+function postData(){
+	fetch("/", {
+		method: 'POST',
+		headers: {'content-type': 'application/json'},
+		body: JSON.stringify({
+			type: 'add',
+			data: todo_list
+		})
+	}).then(res=> res.json())
+	.then(data=>console.log(data))
+}
+
 function add_task() {
 	tasks_div.innerHTML += newTask(task_input.value, "active")
 	tasks_amount.textContent = Number(tasks_amount.textContent) + 1
@@ -13,6 +26,7 @@ function add_task() {
 	task_input.value = ""
 	task_input.focus()
 	add_button.disabled = true
+	postData()
 }
 
 function remove_tasks(e) {
@@ -23,15 +37,17 @@ function remove_tasks(e) {
 	todo_list.tasks = []
 	todo_list.state = []
 	localStorage.setItem("todo_list", JSON.stringify(todo_list))
+	postData()
+
 }
 
 function remove_task(e) {
-
 	let par = e.target.parentElement.parentElement
 	let to_unsave = e.target.parentElement.previousElementSibling.textContent
 	unsaveTask(to_unsave)
 	tasks_div.removeChild(par)
 	tasks_amount.textContent = Number(tasks_amount.textContent) - 1
+	postData()
 }
 
 function newTask(task_text, className, checked="") {
