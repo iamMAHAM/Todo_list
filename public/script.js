@@ -1,11 +1,16 @@
 let tasks_div = document.querySelector(".tasks")
-let tasks_amount = document.querySelector("#tasks_amount")
+let total_tasks = document.querySelector("#total")
+let running_tasks = document.querySelector("#running")
+let ended_tasks = document.querySelector("#ended")
 let task_input = document.querySelector("#input")
 let add_button = document.querySelector("#add_button")
 let remove_All_button = document.querySelector("#remove_all")
 let todo_list = null
 add_button.disabled = true
 
+function updateAmount(element, operator){
+	element.textContent = eval(element.textContent + operator + "1")
+}
 
 function postData(){
 	fetch("/", {
@@ -21,24 +26,27 @@ function postData(){
 
 function add_task() {
 	tasks_div.innerHTML += newTask(task_input.value, "active")
-	tasks_amount.textContent = Number(tasks_amount.textContent) + 1
+	updateAmount(total_tasks, "+")
+	updateAmount(running_tasks, "+")
 	saveTask(task_input.value)
 	task_input.value = ""
 	task_input.focus()
 	add_button.disabled = true
+	running_tasks.textContent 
 	postData()
 }
 
 function remove_tasks(e) {
 	e.preventDefault()
 	tasks_div.textContent = ""
-	tasks_amount.textContent = 0
+	total_tasks.textContent = 0
+	running_tasks.textContent = 0
+	ended_tasks.textContent = 0
 	todo_list = JSON.parse(localStorage.getItem("todo_list"))
 	todo_list.tasks = []
 	todo_list.state = []
 	localStorage.setItem("todo_list", JSON.stringify(todo_list))
 	postData()
-
 }
 
 function remove_task(e) {
@@ -46,7 +54,8 @@ function remove_task(e) {
 	let to_unsave = e.target.parentElement.previousElementSibling.textContent
 	unsaveTask(to_unsave)
 	tasks_div.removeChild(par)
-	tasks_amount.textContent = Number(tasks_amount.textContent) - 1
+	updateAmount(total_tasks, "-")
+	updateAmount(running_tasks, "-")
 	postData()
 }
 
@@ -85,8 +94,12 @@ function ended_task(e){
 
 	if (e.target.checked){
 		changeState(next.textContent, "inactive")
+		updateAmount(ended_tasks, "+")
+		updateAmount(running_tasks, "-")
 	}else{
 		changeState(next.textContent, "active")
+		updateAmount(ended_tasks, "-")
+		updateAmount(running_tasks, "+")
 	}
 }
 
@@ -129,7 +142,7 @@ function restoreTask(){
 			c = todo_list.state[i] === "inactive" ? "checked" : ""
 			tasks_div.innerHTML += newTask(todo_list.tasks[i], todo_list.state[i], c)
 		}
-		tasks_amount.textContent = todo_list.tasks.length
+		total_tasks.textContent = todo_list.tasks.length
 	}
 }
 
