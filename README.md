@@ -11,7 +11,7 @@ Todolist is a simple website where will be managed my timetable
 
 Tasks in localstorage are more priority
 
-the program will it first !
+the program will check it first !
 
 * if there is tasks on localstorage
    * it will erase current ./tasks/tasks.json file with localstorage content
