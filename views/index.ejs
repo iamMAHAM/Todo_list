@@ -23,13 +23,49 @@
 		<div class="tasks">
 		</div>
 		<div id="bottom">
-			<p id="tasks_para">
-				task(s) amount : 
-			</p>
-			<p id="tasks_amount">0</p>
+			<!-- <div class="info-tasks">
+				<div class="info-titles">
+					<p id="tasks_para">task(s): </p>
+					<p>completed</p>
+					<p>running...</p>
+				</div>
+
+				<div class="info-amounts">
+					<p id="tasks_amount">0</p>
+					<p id="tasks_amount">0</p>
+					<p id="tasks_amount">0</p>
+				</div>
+			</div> -->
 			<button id="remove_all" class="bover">Remove All</button>
 		</div>
 	</div>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="2">tasks</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<th>name</th>
+			<th>amount</th>
+			<tr>
+				<td>ended</td>
+				<td id="ended">0</td>
+			</tr>
+
+			<tr>
+				<td>running</td>
+				<td id="running">0</td>
+			</tr>
+
+			<tr>
+				<td>total</td>
+				<td id="total">0</td>
+			</tr>
+
+		</tbody>
+	</table>
 	<script src="script.js"></script>
 	
 
