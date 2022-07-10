@@ -50,9 +50,15 @@ function remove_tasks(e) {
 }
 
 function remove_task(e) {
-	let par = e.target.parentElement.parentElement
-	let to_unsave = e.target.parentElement.previousElementSibling.textContent
-	console.log(e.target)
+	let par = null
+	let to_unsave = null
+	if (e.target.className === "icones"){
+		to_unsave = e.target.previousElementSibling.textContent
+		par = e.target.parentElement
+	}else{
+		to_unsave = e.target.parentElement.previousElementSibling.textContent
+		par  = e.target.parentElement.parentElement
+	}
 	unsaveTask(to_unsave)
 	tasks_div.removeChild(par)
 	updateAmount(total_tasks, "-")
