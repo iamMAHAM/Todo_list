@@ -83,12 +83,6 @@ input#input {
 	font-size: 20px;
 }
 
-#tasks_amount {
-	margin-left: 5px;
-	color: #1d1d1d;
-	font-size: 20px;
-}
-
 .text{
 	text-align: center;
 	font-size: 20px;
@@ -156,4 +150,27 @@ input::placeholder {
 
 .inactive button{
 	visibility: hidden;
+}
+
+.info-amounts,
+.info-titles{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+table{
+	border-collapse: collapse;
+	text-align: center;
+	width: 25%;
+	background-color: white;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+th,
+thead,
+td{
+	border: .5px solid black;
 }
