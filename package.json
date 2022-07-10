@@ -4,7 +4,11 @@
   "description": "a simple todo_list to manage a timetable",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon --ignore assets/tasks.json",
     "test": "nodemon"
+  },
+  "nodemonConfig": {
+    "ignore": ["assets/*.json"]
   },
   "repository": {
     "type": "git",
