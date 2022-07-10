@@ -52,6 +52,7 @@ function remove_tasks(e) {
 function remove_task(e) {
 	let par = e.target.parentElement.parentElement
 	let to_unsave = e.target.parentElement.previousElementSibling.textContent
+	console.log(e.target)
 	unsaveTask(to_unsave)
 	tasks_div.removeChild(par)
 	updateAmount(total_tasks, "-")
@@ -101,6 +102,7 @@ function ended_task(e){
 		updateAmount(ended_tasks, "-")
 		updateAmount(running_tasks, "+")
 	}
+	postData()
 }
 
 function saveTask(text){
@@ -151,4 +153,16 @@ add_button.addEventListener("click", add_task)
 remove_All_button.addEventListener("click", remove_tasks)
 task_input.addEventListener("input", handle)
 
-window.addEventListener("load", restoreTask)
+window.addEventListener("DOMContentLoaded", async ()=>{
+	todo_list = JSON.parse(localStorage.getItem("todo_list"))
+	console.log(todo_list.tasks.length)
+	if (todo_list && todo_list.tasks.length){
+		restoreTask()
+	}else{
+		res = await fetch("/data")
+		res = await res.json()
+		localStorage.setItem("todo_list", res)
+		console.log(res)
+		restoreTask()
+	}
+})
