@@ -17,7 +17,7 @@ function postData(){
 		method: 'POST',
 		headers: {'content-type': 'application/json'},
 		body: JSON.stringify({
-			type: 'add',
+			type: 'update',
 			data: todo_list
 		})
 	}).then(res=> res.json())
