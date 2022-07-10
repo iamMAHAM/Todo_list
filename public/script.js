@@ -155,14 +155,12 @@ task_input.addEventListener("input", handle)
 
 window.addEventListener("DOMContentLoaded", async ()=>{
 	todo_list = JSON.parse(localStorage.getItem("todo_list"))
-	console.log(todo_list.tasks.length)
 	if (todo_list && todo_list.tasks.length){
-		restoreTask()
+		postData()
 	}else{
 		res = await fetch("/data")
 		res = await res.json()
 		localStorage.setItem("todo_list", res)
-		console.log(res)
-		restoreTask()
 	}
+	restoreTask()
 })
