@@ -10,6 +10,7 @@ add_button.disabled = true
 
 function updateAmount(element, operator){
 	element.textContent = eval(element.textContent + operator + "1")
+	Number(element.textContent) < 0 ? element.textContent = 0 : null
 }
 
 function postData(){
